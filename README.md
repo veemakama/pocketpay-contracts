@@ -1,8 +1,9 @@
 # Stellar PocketPay — Savings Vault Contract
+## Security Considerations
 
-A Soroban smart contract that provides a **savings vault** for the [Stellar PocketPay](https://github.com/Stellar-PocketPay) mobile wallet. Users can deposit, withdraw, and time-lock funds on the Stellar network.
+> **This contract is for educational and testnet use.** Review the following before any mainnet deployment.
 
----
+See the [Admin Role](docs/admin-role.md) document for details on what the `initialize(admin)` value records, what the admin can and cannot do today, and future admin design considerations.
 
 ## Features
 
