@@ -185,6 +185,10 @@ stellar-pocketpay-contracts/
         └── src/
             ├── lib.rs                  # Contract implementation
             └── test.rs                 # Unit tests
+└── docs/
+    ├── admin-role.md                   # Admin role documentation
+    ├── pause-design.md                 # Pause / emergency stop research
+    └── upgrade-strategy.md             # Upgrade strategy research
 ```
 
 ---
@@ -219,7 +223,10 @@ stellar-pocketpay-contracts/
 - **No real token transfers**: This contract tracks balances internally but does not yet integrate with the Stellar Asset Contract (SAC) for actual XLM/token transfers. A production version should call the token contract's `transfer()` function.
 - **Single unlock time**: Locking funds multiple times overwrites the previous unlock timestamp. A production version might use per-lock entries.
 - **No admin recovery**: There is no mechanism for the admin to recover or migrate funds.
-- **No upgrade mechanism**: The contract does not implement `upgrade()`. Consider adding this for mainnet.
+- **No upgrade mechanism**: The contract does not implement `upgrade()`. See
+  [docs/upgrade-strategy.md](docs/upgrade-strategy.md) for research into possible upgrade paths.
+- **No pause / emergency stop**: There is no mechanism to halt operations in an emergency.
+  See [docs/pause-design.md](docs/pause-design.md) for research and trade-offs.
 
 ---
 
